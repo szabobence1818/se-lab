@@ -12,6 +12,7 @@ public class TorpedoStore {
   // rate of failing to fire torpedos [0.0, 1.0]
   private double FAILURE_RATE = 0.0; //NOSONAR
 
+  // this is counting the number of the torpedos
   private int torpedoCount = 0;
 
   private Random generator = new Random();
@@ -29,7 +30,7 @@ public class TorpedoStore {
       }
     }
   }
-
+  //this decides that the torpedo can be fired or not
   public boolean fire(int numberOfTorpedos){
     if(numberOfTorpedos < 1 || numberOfTorpedos > this.torpedoCount){
       throw new IllegalArgumentException("numberOfTorpedos");
@@ -53,6 +54,7 @@ public class TorpedoStore {
     return success;
   }
 
+  //testing the emptyness 
   public boolean isEmpty(){
     return this.torpedoCount <= 0;
   }
